@@ -1,0 +1,8 @@
+#!/bin/sh
+battery_dir="/sys/class/power_supply/BAT0"
+if [ -d "$battery_dir" ]; then
+  percent=$(cat "$battery_dir/capacity")
+else
+  percent=100
+fi
+echo "$percent%"
